@@ -19,7 +19,7 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            const res = await axios.post("http://localhost:5000/api/login", formData);
+            const res = await axios.post("http://localhost:5000/api/auth/login", formData);
             alert("Login successful!");
             console.log(res.data);
             // navigate to dashboard or homepage

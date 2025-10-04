@@ -42,7 +42,7 @@ export default function SignUp() {
         }
 
         try {
-            await axios.post("http://localhost:5000/api/register", {
+            await axios.post("http://localhost:5000/api/auth/signup", {
                 name: formData.name,
                 email: formData.email,
                 password: formData.password,
