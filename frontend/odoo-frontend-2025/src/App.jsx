@@ -5,6 +5,7 @@ import AdminDashboard from './pages/AdminDashboard'
 import ForgotPassword from './pages/ForgotPassword'
 import EmployeeSubmission from './pages/EmployeeSubmission'
 import EmployeeDashboard from './pages/EmployeeDashboard'
+import AdminView from './pages/AdminView'
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
         <Route path="/employee" element={<EmployeeDashboard />} />
         <Route path="/employeeForm" element={<EmployeeSubmission />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/admin-view" element={<AdminView />} />
+
       </Routes>
     </Router>
   )
