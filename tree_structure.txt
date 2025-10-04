@@ -1,9 +1,21 @@
 .
 ├── README.md
 ├── backend
+│   ├── .env
+│   ├── config
+│   │   └── db.js
+│   ├── controllers
+│   │   ├── authController.js
+│   │   ├── reminderController.js
+│   │   ├── socialMediaController.js
+│   │   ├── todoListController.js
+│   │   └── userController.js
 │   ├── middleware
 │   │   └── authMiddleware.js
 │   ├── models
+│   │   ├── Reminder.js
+│   │   ├── SocialMediaApp.js
+│   │   ├── TodoList.js
 │   │   ├── company.js
 │   │   ├── expense.js
 │   │   ├── rule.js
@@ -11,11 +23,19 @@
 │   ├── package-lock.json
 │   ├── package.json
 │   ├── routes
-│   │   ├── auth.js
-│   │   ├── expenses.js
-│   │   ├── rules.js
-│   │   └── users.js
-│   └── server.js
+│   │   ├── ApprovalsRoutes.js
+│   │   ├── ReceiptsRoutes.js
+│   │   ├── RulesRoutes.js
+│   │   ├── UtilitiesRoutes.js
+│   │   ├── authRoutes.js
+│   │   ├── expenseRoutes.js
+│   │   └── userRoutes.js
+│   ├── server.js
+│   ├── uploads
+│   │   ├── 1759570456967.png
+│   │   └── 1759570551609.png
+│   └── utils
+│       └── currencyUtils.js
 ├── frontend
 │   └── odoo-frontend-2025
 │       ├── README.md
@@ -40,12 +60,21 @@
 │       │   ├── index.css
 │       │   ├── main.jsx
 │       │   ├── pages
+│       │   │   ├── AdminDashboard.jsx
+│       │   │   ├── EmployeeDashboard.jsx
+│       │   │   ├── EmployeeSubmission.jsx
+│       │   │   ├── ForgotPassword.jsx
 │       │   │   ├── Login.jsx
+│       │   │   ├── ManagerDashboard.jsx
 │       │   │   └── SignUp.jsx
 │       │   └── styles
+│       │       ├── dashboard.css
+│       │       ├── employeeDashboard.css
+│       │       ├── employeeSubmission.css
+│       │       ├── forgotpassword.css
 │       │       ├── login.css
 │       │       └── signup.css
 │       └── vite.config.js
 └── tree_structure.txt
 
-14 directories, 35 files
+18 directories, 60 files

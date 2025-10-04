@@ -3,7 +3,7 @@
 
 import mongoose from 'mongoose';
 import SocialMediaApp from '../models/SocialMediaApp.js';
-import User from '../models/User.js';
+import User from '../models/user.js';
 
 // Utility function to decode token and get userId
 const getUserIdFromToken = async (token) => {
