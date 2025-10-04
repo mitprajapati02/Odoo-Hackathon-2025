@@ -65,6 +65,7 @@
 │       │   │   ├── EmployeeSubmission.jsx
 │       │   │   ├── ForgotPassword.jsx
 │       │   │   ├── Login.jsx
+│       │   │   ├── ManagerDashboard.jsx
 │       │   │   └── SignUp.jsx
 │       │   └── styles
 │       │       ├── dashboard.css
@@ -76,4 +77,4 @@
 │       └── vite.config.js
 └── tree_structure.txt
 
-18 directories, 59 files
+18 directories, 60 files
