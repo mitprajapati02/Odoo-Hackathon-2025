@@ -1,0 +1,51 @@
+.
+├── README.md
+├── backend
+│   ├── middleware
+│   │   └── authMiddleware.js
+│   ├── models
+│   │   ├── company.js
+│   │   ├── expense.js
+│   │   ├── rule.js
+│   │   └── user.js
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── routes
+│   │   ├── auth.js
+│   │   ├── expenses.js
+│   │   ├── rules.js
+│   │   └── users.js
+│   └── server.js
+├── frontend
+│   └── odoo-frontend-2025
+│       ├── README.md
+│       ├── dist
+│       │   ├── assets
+│       │   │   ├── index-CkBGqcwW.js
+│       │   │   ├── index-D8b4DHJx.css
+│       │   │   └── react-CHdo91hT.svg
+│       │   ├── index.html
+│       │   └── vite.svg
+│       ├── eslint.config.js
+│       ├── index.html
+│       ├── package-lock.json
+│       ├── package.json
+│       ├── public
+│       │   └── vite.svg
+│       ├── src
+│       │   ├── App.css
+│       │   ├── App.jsx
+│       │   ├── assets
+│       │   │   └── react.svg
+│       │   ├── index.css
+│       │   ├── main.jsx
+│       │   ├── pages
+│       │   │   ├── Login.jsx
+│       │   │   └── SignUp.jsx
+│       │   └── styles
+│       │       ├── login.css
+│       │       └── signup.css
+│       └── vite.config.js
+└── tree_structure.txt
+
+14 directories, 35 files
