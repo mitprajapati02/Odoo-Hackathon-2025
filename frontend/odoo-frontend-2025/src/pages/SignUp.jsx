@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/signup.css"; // CSS file for styling
+import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -57,6 +60,7 @@ export default function SignUp() {
                 confirmPassword: "",
                 country: "",
             });
+            navigate("/login");
         } catch (err) {
             console.error(err);
             alert("Error registering user");

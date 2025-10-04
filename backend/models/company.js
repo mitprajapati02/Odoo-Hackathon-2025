@@ -1,10 +1,33 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const companySchema = new mongoose.Schema({
-  name: String,
-  country: String,
-  currency: String,
-  adminId: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
-}, { timestamps: true });
+const companySchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+    },
+    password: {
+      type: String,
+      required: true,
+      minlength: 6,
+    },
+    country: {
+      type: String,
+      required: true,
+    },
+    currency: {
+      type: String,
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model("Company", companySchema);
+export default mongoose.model("Company", companySchema);

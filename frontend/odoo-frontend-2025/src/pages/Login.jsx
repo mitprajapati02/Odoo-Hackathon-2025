@@ -23,7 +23,7 @@ export default function Login() {
             alert("Login successful!");
             console.log(res.data);
             // navigate to dashboard or homepage
-            navigate("/dashboard");
+            navigate("/admin");
         } catch (err) {
             console.error(err);
             alert("Invalid credentials or server error");
