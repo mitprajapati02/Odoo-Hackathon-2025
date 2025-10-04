@@ -1,37 +1,21 @@
-import express from 'express';
-
-import multer from 'multer';
-import path from 'path';
-
-const storage = multer.diskStorage({
-  destination: 'uploads/', // Save images in 'uploads' directory
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname)); // Unique filename
-  },
-});
-
-const upload = multer({ storage });
-
-import {
-  getUserProfile,
-  updateUserProfile,
-  changePassword,
-  resetPassword,
-  forgotPassword,
-  checkToken,
-} from '../controllers/userController.js';
+import express from "express";
 
 const router = express.Router();
 
-router.get('/profile', getUserProfile);
+router.post("/companies/:id/users", (req, res) => {
+  res.send(`Create a new user in company with ID ${req.params.id}`);
+});
 
-router.put('/profile', upload.single('profilePic'), updateUserProfile);
+router.patch("/users/:id/role", (req, res) => {
+  res.send(`Update role for user with ID ${req.params.id}`);
+});
 
-router.patch('/change-password', changePassword);
+router.patch("/users/:id/manager", (req, res) => {
+  res.send(`Assign manager for user with ID ${req.params.id}`);
+});
 
-router.post('/forgot-password', forgotPassword);
+router.get("/companies/:id/users", (req, res) => {
+  res.send(`Get all users in company with ID ${req.params.id}`);
+});
 
-router.patch('/reset-password', resetPassword);
-
-router.get('/check-token/:token', checkToken);
 export default router;

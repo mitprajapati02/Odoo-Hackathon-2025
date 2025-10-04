@@ -1,14 +1,12 @@
-import express from 'express';
-import { signupUser, loginUser } from '../controllers/authController.js';
-
-
+import express from "express";
 
 const router = express.Router();
 
-// 📌 Use Controller in Route
-router.post('/signup', signupUser);
-
-router.post('/login', loginUser);
-
+router.post("/signup", (req, res) => {
+  res.send("User signup endpoint");
+});
+router.post("/login", (req, res) => {
+  res.send("User login endpoint");
+});
 
 export default router;

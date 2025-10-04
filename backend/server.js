@@ -3,11 +3,13 @@ import cors from "cors";
 
 import connectDB from "./config/db.js";
 
-// import authRoutes from "./routes/authRoutes.js";
-// import userRoutes from "./routes/userRoutes.js";
-// import socialMediaRoutes from "./routes/socialMediaRoutes.js";
-// import reminderRoutes from "./routes/reminderRoutes.js";
-// import todoListRoutes from "./routes/todoListRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import ApprovalsRoutes from "./routes/ApprovalsRoutes.js";
+import expenseRoutes from "./routes/expenseRoutes.js";
+import RulesRoutes from "./routes/RulesRoutes.js";
+import ReceiptsRoutes from "./routes/ReceiptsRoutes.js";
+import UtilitiesRoutes from "./routes/UtilitiesRoutes.js";
 
 const app = express();
 
@@ -19,15 +21,19 @@ app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
-// app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRoutes);
 
-// app.use("/api/user", userRoutes);
+app.use("/api/user", userRoutes);
 
-// app.use("/api/social", socialMediaRoutes);
+app.use("/api/approvals", ApprovalsRoutes);
 
-// app.use("/api/reminder", reminderRoutes);
+app.use("/api/expenses", expenseRoutes);
 
-// app.use("/api/todo", todoListRoutes);
+app.use("/api/rules", RulesRoutes);
+
+app.use("/api/receipts", ReceiptsRoutes);
+
+app.use("/api/utilities", UtilitiesRoutes);
 
 // eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 5000;
