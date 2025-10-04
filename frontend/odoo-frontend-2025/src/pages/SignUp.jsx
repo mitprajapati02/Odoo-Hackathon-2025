@@ -122,6 +122,19 @@ export default function SignUp() {
                 </select>
 
                 <button type="submit">Register</button>
+                <div className="login-footer">
+                    <p>
+                        have account?{" "}
+                        <span onClick={() => navigate("/login")} className="link">
+                            Log In
+                        </span>
+                    </p>
+                    <p>
+                        <span onClick={() => navigate("/forgot-password")} className="link">
+                            Forgot Password?
+                        </span>
+                    </p>
+                </div>
             </form>
         </div>
     );

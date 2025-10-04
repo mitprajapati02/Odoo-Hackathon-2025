@@ -1,20 +1,19 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const UserSchema = new mongoose.Schema(
+const userSchema = new mongoose.Schema(
   {
-    username: { type: String, required: true },
-    mobile: { type: String, required: true, unique: true },
+    name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
-    profilePic: { type: String },
-    profession: { type: String, required: true },
-    age: { type: Number },
-    password: { type: String, required: true },
-    token: { type: String, unique: true },
-    socialMediaApps: [
-      { type: mongoose.Schema.Types.ObjectId, ref: 'SocialMediaApp' },
-    ],
+    password: { type: String, required: true }, // actual password
+    tempPassword: { type: String }, // temporary password sent by admin
+    role: {
+      type: String,
+      enum: ["Admin", "Manager", "Employee"],
+      default: "Employee",
+    },
+    manager: { type: String, default: "" },
   },
   { timestamps: true }
 );
 
-export default mongoose.model('User', UserSchema);
+export default mongoose.model("User", userSchema);
