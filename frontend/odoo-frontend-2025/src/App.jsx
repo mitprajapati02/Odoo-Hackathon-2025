@@ -7,6 +7,7 @@ import EmployeeSubmission from './pages/EmployeeSubmission.jsx'
 import EmployeeDashboard from './pages/EmployeeDashboard.jsx'
 // Correct import for the new ManagerDashboard component
 import ManagerDashboard from './pages/ManagerDashboard.jsx'
+import AdminView from './pages/AdminView.jsx'
 
 function App() {
   return (
