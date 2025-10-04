@@ -3,7 +3,7 @@ import "../styles/employeeSubmission.css";
 
 // SVG Icon for the upload button
 const UploadIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1} width={24} height={24}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
     </svg>
 );
@@ -18,7 +18,7 @@ export default function App() {
     const [paidBy, setPaidBy] = useState('');
     const [remarks, setRemarks] = useState('');
     const [receipt, setReceipt] = useState(null);
-    
+
     // State for notification
     const [showNotification, setShowNotification] = useState(false);
 
@@ -33,7 +33,7 @@ export default function App() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-      
+
         const formData = new FormData();
         formData.append("employee", "Prayesh Patel"); // hardcoded for now, can be dynamic
         formData.append("description", description);
@@ -43,26 +43,26 @@ export default function App() {
         formData.append("paidBy", paidBy);
         formData.append("remarks", remarks);
         if (receipt) {
-          formData.append("receipt", receipt);
+            formData.append("receipt", receipt);
         }
-      
+
         try {
-          const res = await fetch("http://localhost:5000/api/expenses", {
-            method: "POST",
-            body: formData,
-          });
-      
-          const data = await res.json();
-          console.log("✅ Expense Saved:", data);
-      
-          if (res.ok) {
-            setShowNotification(true);
-            setTimeout(() => setShowNotification(false), 3000);
-          }
+            const res = await fetch("http://localhost:5000/api/expenses", {
+                method: "POST",
+                body: formData,
+            });
+
+            const data = await res.json();
+            console.log("✅ Expense Saved:", data);
+
+            if (res.ok) {
+                setShowNotification(true);
+                setTimeout(() => setShowNotification(false), 3000);
+            }
         } catch (error) {
-          console.error("❌ Error saving expense:", error);
+            console.error("❌ Error saving expense:", error);
         }
-      
+
         // reset form fields
         setDescription("");
         setCategory("Travel");
@@ -72,13 +72,13 @@ export default function App() {
         setRemarks("");
         setReceipt(null);
         if (fileInputRef.current) fileInputRef.current.value = "";
-      };
-      
+    };
+
 
     return (
         <div className="bg-gray-900 text-gray-200 flex items-center justify-center min-h-screen p-4 font-sans">
             <div className="w-full max-w-4xl mx-auto bg-gray-800 rounded-2xl shadow-2xl p-6 md:p-10 border border-gray-700">
-                
+
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
                     <h1 className="text-3xl font-bold text-white mb-4 md:mb-0">Submit Expense</h1>
@@ -94,7 +94,7 @@ export default function App() {
                 {/* Form */}
                 <form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                        
+
                         {/* Left Column */}
                         <div className="flex flex-col space-y-6">
                             <div>
@@ -137,7 +137,7 @@ export default function App() {
 
                         {/* Right Column */}
                         <div className="flex flex-col space-y-6">
-                             <div>
+                            <div>
                                 <label htmlFor="paid-by" className="block text-sm font-medium text-gray-400 mb-2">Paid by</label>
                                 <input type="text" id="paid-by" value={paidBy} onChange={(e) => setPaidBy(e.target.value)} placeholder="e.g., Hard Patel" className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors duration-300" required />
                             </div>

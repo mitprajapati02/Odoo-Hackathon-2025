@@ -46,7 +46,7 @@
 }
 
 .user-table tr:hover {
-  background-color: #f9f9f9;
+  background-color: rgba(228, 217, 217, 0.1);
 }
 
 select,
